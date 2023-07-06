@@ -1,0 +1,10 @@
+Bean的生命周期
+
+1. bean容器通过配置文件或扫描注解标记的类或方法发现bean的定义，通过java反射创建bean的实例
+2. 属性赋值，通过依赖注入为实例化后的bean赋值
+3. 如果bean实现了aware接口，比如BeanNameAware接口，调用setBeanName方法；如果实现了BeanClassLoader接口，调用setBeanClassLoader方法；如果实现了BeanFactoryAware接口，调用setBeanFactory方法
+4. 如果有和加载这个bean容器相关的BeanPostProcesser对象，会执行postProcessBeforeInitialization方法
+5. 如果bean实现了InitializingBean接口，执行afterPropertiesSet方法
+6. 如果有和加载这个bean容器相关的BeanPostProcesser对象，执行postProcessAfterInitialization方法
+7. Bean的销毁，如果bean实现了DisposableBean接口，执行destroy方法
+8. 如果Bean在配置文件中定义了定义destory-mothod属性，执行指定的方法。
