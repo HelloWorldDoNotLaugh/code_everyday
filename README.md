@@ -1,13 +1,15 @@
 # coding everyday
 ## leetcode
 * [图解算法与数据结构-30天刷题计划.md](demo_code%2Fsrc%2Fcom%2Fwy%2Fleetcode%2Fpractise_30%2F%E5%9B%BE%E8%A7%A3%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-30%E5%A4%A9%E5%88%B7%E9%A2%98%E8%AE%A1%E5%88%92.md)
-* [1039多边形三角剖分的最低得分.md](file/leetcode/1039多边形三角剖分的最低得分.md)
 ### search
 * [二分查找.md](file%2Fleetcode%2Fsearch%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md)
 
 ### array
 
 *  [双指针.md](file/leetcode/array/双指针.md) 
+### other
+* [1039多边形三角剖分的最低得分.md](file/leetcode/other/1039多边形三角剖分的最低得分.md)
+
 
 ## other
 * [按优先级将实体类的属性与属性值拼串.md](file/other/按优先级将实体类的属性与属性值拼串.md) 
