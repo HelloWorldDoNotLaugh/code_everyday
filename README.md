@@ -33,3 +33,6 @@
 ## spring
 ### aop
 * [aop实现接口鉴权.md](file%2Fspring%2Faop%2Faop%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%A3%E9%89%B4%E6%9D%83.md)
+
+## OTHER
+* [资源分享.md](file%2Fother%2F%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB.md)
