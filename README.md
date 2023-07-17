@@ -24,7 +24,7 @@
 ## sql
 
 *  [分组后保留id最小的数据.md](file\sql\分组后保留id最小的数据.md) 
-*  [牛客sql.md](file\sql\牛客sql.md) 
+* [牛客sql.md](file%2Fsql%2F%E7%89%9B%E5%AE%A2sql.md)
 
 ## thread
 
