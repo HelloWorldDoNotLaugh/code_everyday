@@ -1,9 +1,6 @@
 package com.wy.leetcode.practise_30;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author yuyang.zhang
@@ -62,6 +59,14 @@ public class TreeNode {
         return root;
     }
 
+
+    /**
+     * @description 层次遍历
+     * @author HelloWorld
+     * @create 2023/7/23 08:56
+     * @param root
+     * @return java.util.List<java.lang.Integer>
+     */
     public static List<Integer> levelOrderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
@@ -69,24 +74,96 @@ public class TreeNode {
         while (!queue.isEmpty()) {
             TreeNode treeNode = queue.poll();
             result.add(treeNode.val);
-            if (treeNode.left != null) {
-                queue.add(treeNode.left);
-            } else {
-                result.add(null);
-            }
 
-            if (treeNode.right != null) {
-                queue.add(treeNode.right);
-            } else {
-                result.add(null);
-            }
+            addIfNotNull(queue, treeNode.left);
+            addIfNotNull(queue, treeNode.right);
         }
 
         return result;
     }
 
+    /**
+     * @description 前序遍历：根，左，右
+     * @author HelloWorld
+     * @create 2023/7/23 08:58
+     * @param root
+     * @return void
+     */
+    public static List<Integer> preOrderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+            addIfNotNull(stack, node.right);
+            addIfNotNull(stack, node.left);
+        }
+
+        return result;
+    }
+
+    /**
+     * @description 中序遍历 左根右
+     * @author HelloWorld
+     * @create 2023/7/23 09:20
+     * @param root
+     * @return java.util.List<java.lang.Integer>
+     */
+    public static List<Integer> inOrderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (null != node || !stack.isEmpty()) {
+            while (null != node) {
+                stack.push(node);
+                node = node.left;
+            }
+
+            node= stack.pop();
+            result.add(node.val);
+            node = node.right;
+        }
+
+        return result;
+    }
+
+    /**
+     * @description 后续遍历
+     * @author HelloWorld 左右根
+     * @create 2023/7/23 09:09
+     * @param node
+     * @return java.util.List<java.lang.Integer>
+     */
+    public static List<Integer> postOrderTraversal(TreeNode node) {
+        Stack<TreeNode> resultStack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(node);
+        while (!stack.isEmpty()) {
+            TreeNode treeNode = stack.pop();
+            resultStack.push(treeNode);
+
+            addIfNotNull(stack, treeNode.left);
+            addIfNotNull(stack, treeNode.right);
+        }
+
+        List<Integer> result = new ArrayList<>();
+        while (!resultStack.isEmpty()) {
+            result.add(resultStack.pop().val);
+        }
+
+        return result;
+    }
+
+
+    private static void addIfNotNull(Collection<TreeNode> collection, TreeNode node) {
+        if (null != node) {
+            collection.add(node);
+        }
+    }
+
     public static void main(String[] args) {
-        TreeNode node = init(3, 9, 20, null, null, 15, 7);
+        TreeNode node = init(1, 2, 3, 4, 5, 6, 7, 8, 9);
         List<Integer> integers = levelOrderTraversal(node);
         for (Integer integer : integers) {
             System.out.println(integer);
