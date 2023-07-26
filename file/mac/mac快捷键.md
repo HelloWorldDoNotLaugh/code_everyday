@@ -4,6 +4,7 @@
 
 1. 显示隐藏文件: cmd + shift + .
 2. 修改文件的默认打开方式：Option + Cmd + i
+3. 在Finder中选择文件或是文件夹，然后按下快捷键 command+Option+C
 
 ## 电脑设置
 1. 锁屏：Ctrl + Cmd + Q
