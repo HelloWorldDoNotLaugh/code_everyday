@@ -12,3 +12,11 @@
 ## 常用设置
 1. 打开点按 设置 - 触控板 - 轻点来点按
 2. 三指拖动和选择 设置 - 辅助功能 - 指针控制 - 触控板选项 - 启用拖移 - 三指拖移
+
+## 关闭微软自动更新
+```shell
+cd /Library;
+cd Application\ Support/;
+cd Microsoft/MAU2.0;
+sudo rm -rf Microsoft\ AutoUpdate.app;
+```
