@@ -40,6 +40,7 @@ public class DateUtil {
         return new SimpleDateFormat(dateFormat).format(calendar.getTime());
     }
 
+
     private static String getDateString(String dateFormat) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
         return simpleDateFormat.format(new Date());
