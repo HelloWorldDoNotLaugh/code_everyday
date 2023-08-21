@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * @author yuyang.zhang
- * @Description
+ * @Description 策略模式实现简易计算器
  * @date 2023/8/21
  */
 public class Calculate {
