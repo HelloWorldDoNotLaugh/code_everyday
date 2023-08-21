@@ -1,5 +1,7 @@
 package com.wy.leetcode.practise_30;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -22,11 +24,16 @@ public class Day14 {
      *
      */
     public boolean exist(char[][] board, String word) {
+        // 优化：消除字符不一致的影响
+        if (charNotAllMatch(board, word)) {
+            return false;
+        }
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 // 数组中第一个值存放当前位置的i，第二个值存放j，第三个值存放当前字符在word中对应的位置
                 Stack<int[]> stack = new Stack<>();
-                int[][] used = new int[board.length][board[0].length];
+                LinkedList<String> used = new LinkedList<>();
 
                 stack.push(new int[]{i, j, -1});
                 while (!stack.isEmpty()) {
@@ -34,15 +41,18 @@ public class Day14 {
                     int x = pops[0];
                     int y = pops[1];
                     int index = pops[2] + 1;
-                    if (board[x][y] == word.toCharArray()[index] && used[x][y] != 1) {
-                        used[x][y] = 1;
+                    if (board[x][y] == word.toCharArray()[index]) {
+                        while (used.size() > index) {
+                            used.removeLast();
+                        }
+                        used.addLast(String.format("(%s,%s)", x, y));
                         if (index == word.length() -1) {
                             return true;
                         }
+
                         pushStackIfNotUsed(x, y, index, stack, board, used);
-                    } else {
-                        used[x][y] = 0;
                     }
+
                 }
             }
         }
@@ -50,28 +60,67 @@ public class Day14 {
         return false;
     }
 
-    private void pushStackIfNotUsed(int i, int j, int index, Stack<int[]> stack, char[][] board, int[][] used) {
-        if (i-1 >= 0 && used[i-1][j] != 1) {
+    private void pushStackIfNotUsed(int i, int j, int index, Stack<int[]> stack, char[][] board, LinkedList<String> used) {
+        if (i-1 >= 0 && usedListNotContain(used, i-1, j)) {
             stack.push(new int[]{i-1, j, index});
         }
-        if (i+1 < board.length && used[i+1][j] != 1) {
+        if (i+1 < board.length && usedListNotContain(used, i+1, j)) {
             stack.push(new int[]{i+1, j, index});
         }
-        if (j-1 >= 0 && used[i][j-1] != 1) {
+        if (j-1 >= 0 && usedListNotContain(used, i, j-1)) {
             stack.push(new int[]{i, j-1, index});
         }
-        if (j+1 < board[0].length && used[i][j+1] != 1) {
+        if (j+1 < board[0].length && usedListNotContain(used, i, j+1)) {
             stack.push(new int[]{i, j+1, index});
         }
+    }
+
+    private boolean usedListNotContain(LinkedList<String> matched, int x, int y) {
+        return !matched.contains(String.format("(%s,%s)", x, y));
+    }
+
+    private boolean charNotAllMatch(char[][] board, String word) {
+        HashSet<Character> wordCharSet = new HashSet<>();
+        for (char c : word.toCharArray()) {
+            wordCharSet.add(c);
+        }
+
+        HashSet<Character> boardCharSet = new HashSet<>();
+        for (char[] chars : board) {
+            for (char c : chars) {
+                boardCharSet.add(c);
+            }
+        }
+
+        return !boardCharSet.containsAll(wordCharSet);
+    }
+
+
+    /**
+     * @description 剑指 Offer 13. 机器人的运动范围
+     * @author HelloWorld
+     * @create 2023/8/20 14:44
+     * @param m
+     * @param n
+     * @param k
+     * @return int
+     */
+    public int movingCount(int m, int n, int k) {
+        int count = 0;
+        for (int i = 0; i < m; i++) {
+
+            for (int j = 0; j < n; j++) {
+
+            }
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
         Day14 day14 = new Day14();
 
-        char[][] board = new char[][]{{'A','B','C','E'}, {'S','F','E','S'}, {'A','D','E','E'}};
-        //char[][] board = new char[][]{{'a','b'},{'c','d'}};
-        String word = "ABCESEEEFS";
 
-        System.out.println(day14.exist(board, word));
+        System.out.println(day14.movingCount(4, 3, 2));
     }
 }
