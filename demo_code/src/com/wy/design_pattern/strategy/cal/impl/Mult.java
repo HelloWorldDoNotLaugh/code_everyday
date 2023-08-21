@@ -1,6 +1,6 @@
-package com.wy.mycode.design_pattern.strategy.cal.impl;
+package com.wy.design_pattern.strategy.cal.impl;
 
-import com.wy.mycode.design_pattern.strategy.cal.Calculator;
+import com.wy.design_pattern.strategy.cal.Calculator;
 
 import java.math.BigDecimal;
 

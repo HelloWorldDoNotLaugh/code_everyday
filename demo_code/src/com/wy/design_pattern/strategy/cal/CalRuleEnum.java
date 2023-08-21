@@ -1,9 +1,9 @@
-package com.wy.mycode.design_pattern.strategy.cal;
+package com.wy.design_pattern.strategy.cal;
 
-import com.wy.mycode.design_pattern.strategy.cal.impl.Add;
-import com.wy.mycode.design_pattern.strategy.cal.impl.Div;
-import com.wy.mycode.design_pattern.strategy.cal.impl.Mult;
-import com.wy.mycode.design_pattern.strategy.cal.impl.Sub;
+import com.wy.design_pattern.strategy.cal.impl.Mult;
+import com.wy.design_pattern.strategy.cal.impl.Sub;
+import com.wy.design_pattern.strategy.cal.impl.Add;
+import com.wy.design_pattern.strategy.cal.impl.Div;
 
 import java.util.Arrays;
 
