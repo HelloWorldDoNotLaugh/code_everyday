@@ -139,8 +139,8 @@ public class Day14 {
         if (canDown && addEveryBit(i) + addEveryBit(j) <= k) {
             return true;
         }
-        boolean canRight = j - 1 >= 0 && ranArray[i][j - 1] == 1;
 
+        boolean canRight = j - 1 >= 0 && ranArray[i][j - 1] == 1;
         if (canRight && addEveryBit(i) + addEveryBit(j) <= k) {
             return true;
         }
