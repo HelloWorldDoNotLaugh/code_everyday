@@ -1,6 +1,5 @@
 package com.wy.spring_demo.interceptor;
 
-import com.alibaba.fastjson.JSON;
 import com.wy.spring_demo.entity.UserDO;
 import com.wy.spring_demo.service.LoginService;
 
@@ -11,9 +10,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * @author HelloWorld
