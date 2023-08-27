@@ -23,7 +23,7 @@ public class AppInterceptor implements HandlerInterceptor {
     private LoginService loginService;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String uri = request.getRequestURI();
         if (StringUtils.startsWithIgnoreCase(uri, "/api")) {
             UserDO login = loginService.login(request, response);
