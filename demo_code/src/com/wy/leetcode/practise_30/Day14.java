@@ -106,21 +106,57 @@ public class Day14 {
      * @return int
      */
     public int movingCount(int m, int n, int k) {
+        int[][] ranArray = new int[m][n];
+        ranArray[0][0] = 1;
         int count = 0;
         for (int i = 0; i < m; i++) {
-
+            if (addEveryBit(i) > k) {
+                continue;
+            }
             for (int j = 0; j < n; j++) {
-
+                if (canRun(ranArray, i, j, k)) {
+                    count++;
+                    ranArray[i][j] = 1;
+                }
             }
         }
 
         return count;
     }
 
+    private int addEveryBit(int num) {
+        int result = 0;
+        while (num > 0) {
+            result += num % 10;
+            num = num / 10;
+        }
+
+        return result;
+    }
+
+    private boolean canRun(int[][] ranArray, int i, int j, int k) {
+        boolean canDown = i-1 >= 0 && ranArray[i-1][j] == 1;
+        if (canDown && addEveryBit(i) + addEveryBit(j) <= k) {
+            return true;
+        }
+        boolean canRight = j - 1 >= 0 && ranArray[i][j - 1] == 1;
+
+        if (canRight && addEveryBit(i) + addEveryBit(j) <= k) {
+            return true;
+        }
+
+        if (i==0 && j==0) {
+            return true;
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         Day14 day14 = new Day14();
 
+        //System.out.println(day14.addEveryBit(0));
 
-        System.out.println(day14.movingCount(4, 3, 2));
+        System.out.println(day14.movingCount(16, 8, 4));
     }
 }
