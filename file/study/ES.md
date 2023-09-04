@@ -21,6 +21,8 @@ ES是开源的企业级的分布式搜索引擎；
 
 ![image-20230904154025222](./ES.assets/image-20230904154025222.png)
 
+
+
 ## 安装Kibana
 
 1. 下载地址
@@ -34,47 +36,38 @@ ES是开源的企业级的分布式搜索引擎；
 5. 打开 kibnan
    http://localhost:5601
 
+## ES集群相关命令
 
-## ES常用查询
-1. 检查ES节点
+| 检查当前节点                   | http://10.58.11.10:19200/_cat/health?v                       |
+| ------------------------------ | ------------------------------------------------------------ |
+| 获取集群节点列表               | http://10.58.11.10:19200/_cat/nodes?v                        |
+| 查看集群全部索引               | http://10.58.11.10:19200/_cat/indices?v                      |
+| 查看详细的异常信息             | http://10.58.11.10:19200/_cluster/allocation/explain?pretty  |
+| 查看集群的状态并显示索引的状态 | http://10.58.11.10:19200/_cluster/health?level=indices&pretty |
+| 查看集群中节点的分配情况       | http://10.58.11.10:19200/_cat/allocation?v&pretty            |
+| 查看索引的分片规划             | http://10.58.11.10:19200/_cat/shards?v&h=index,shard,prirep,state,unassigned.reason,node |
+| 查看某个索引的分片状态         | http://10.58.11.10:19200/_cat/shards/index_name?v            |
+| 查看某个索引的设置             | http://10.58.11.10:19200/index_name/_settings?pretty         |
 
-    http://10.58.11.10:19200/_cat/health?v
+## ES索引相关命令
 
-2. 获取集群节点列表
+| 创建索引 | curl -XPUT 'localhost:9200/indexName?pretty'                 |
+| -------- | ------------------------------------------------------------ |
+| 删除索引 | curl -XDELETE 'localhost:9200/indexName?pretty'              |
+| 查看     | curl -XGET 'localhost:9200/indexName/type/1?pretty'          |
+| 插入     | curl -XPUT 'localhost:9200/customer/external/1?pretty' -d' {<br/>       　　  "name": "John Doe"<br/>　　}' |
 
-    http://10.58.11.10:19200/_cat/nodes?v
+/_cluster/health?level=[indices]
 
-3. 查看集群全部索引 
+```
+curl -XGET 'http://10.58.11.10:19200/_cat/nodes?v&h=ip,node.role,health' | grep yellow
+```
 
-   http://10.58.11.10:19200/_cat/indices?v
+```
+http://10.58.11.10:19200/_cat/nodes?v|grep yellow
+```
 
-4. 创建索引与删除索引
 
-   * 创建索引
-
-     ```shell
-     curl -XPUT 'localhost:9200/indexName?pretty'
-     ```
-
-   * 删除索引
-
-     ```shell
-     curl -XDELETE 'localhost:9200/indexName?pretty'
-     ```
-
-   * 查看
-
-     ```shell
-        curl -XGET 'localhost:9200/indexName/type/1?pretty'
-     ```
-
-   * 插入
-
-     ```shell
-     　　curl -XPUT 'localhost:9200/customer/external/1?pretty' -d' {
-            　　  "name": "John Doe"
-     　　}'
-     ```
 
 
 
