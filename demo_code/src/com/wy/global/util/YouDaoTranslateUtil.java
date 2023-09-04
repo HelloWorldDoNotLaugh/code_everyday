@@ -25,6 +25,7 @@ public class YouDaoTranslateUtil {
 
     public static String translateCN2EN(String info) throws NoSuchAlgorithmException {
         System.out.println((info + " 请求有道云API start"));
+        info = dealParam(info);
         // 添加请求参数
         Map<String, String[]> params = createRequestParams();
         params.put("q", new String[]{info});
@@ -35,19 +36,35 @@ public class YouDaoTranslateUtil {
         // 打印返回结果
         if (result != null) {
             String resultStr = JSON.parseObject(new String(result, StandardCharsets.UTF_8)).get("translation").toString();
-            if (resultStr.startsWith("[\"")) {
-                resultStr = resultStr.replace("[\"", "");
-            }
-            if (resultStr.endsWith("\"]")) {
-                resultStr = resultStr.replace("\"]", "");
-            }
-
+            resultStr = dealResult(resultStr);
             System.out.println((info + " 请求有道云API end 翻译结果为：") + resultStr);
             return resultStr;
         }
 
         throw new RuntimeException("有道云翻译异常");
     }
+
+    private static String dealParam(String paramInfo) {
+        return paramInfo.replace("【", "[")
+                .replace("】", "]")
+                .replace("，", ",")
+                .replace("。", ".")
+                .replace("！", "!")
+                .replace("？", "?");
+    }
+
+
+    private static String dealResult(String resultStr) {
+        if (resultStr.startsWith("[\"")) {
+            resultStr = resultStr.replace("[\"", "");
+        }
+        if (resultStr.endsWith("\"]")) {
+            resultStr = resultStr.replace("\"]", "");
+        }
+
+        return resultStr;
+    }
+
     private static Map<String, String[]> createRequestParams() {
         /*
          * note: 将下列变量替换为需要请求的参数

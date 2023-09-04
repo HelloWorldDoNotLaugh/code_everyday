@@ -62,7 +62,7 @@ public class GlobalizeHandler {
             return info;
         }
 
-        boolean onlyTranslateFlag = firstWord.equalsIgnoreCase("log");
+        boolean onlyTranslateFlag = firstWord.substring(0, 3).equalsIgnoreCase("log");
 
         return globalizeHandler(info, onlyTranslateFlag);
     }
@@ -274,7 +274,7 @@ public class GlobalizeHandler {
     }
 
     public static void main(String[] args) throws Exception{
-        System.out.println(handler("            LogUtil.info(\"找不到实例（{}）对应的任务编排，有可能被删\", taskflowInstanceLogDO.getUuid());\n"));
+        System.out.println(handler("                        log.error(\"回调 【{}】 任务失败\", item.getName(), e);\n"));
         System.exit(1);
     }
 }
