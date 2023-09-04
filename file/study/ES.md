@@ -19,7 +19,7 @@ ES是开源的企业级的分布式搜索引擎；
 - **Shard 分片**：在创建一个索引时可以指定分成多少个分片来存储。每个分片本身也是一个功能完善且独立的“索引”，可以被放置在集群的任意节点上。
 - **Replication 备份**: 一个分片可以有多个备份（副本）
 
-![image-20230904153743164](/Users/helloworld/code/code_everyday/file/study/ES.assets/image-20230904153743164.png)
+![image-20230904154025222](./ES.assets/image-20230904154025222.png)
 
 ## 安装Kibana
 
