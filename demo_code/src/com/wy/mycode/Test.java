@@ -1,5 +1,6 @@
 package com.wy.mycode;
 
+import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,10 +13,11 @@ public class Test {
     private static final Pattern RETURN_THROW_PATTERN = Pattern.compile(".*\"[^\"]*\\)");
 
     public static void main(String[] args) {
-        System.out.println(RETURN_THROW_PATTERN.matcher("+ \"光\")").matches());
-        System.out.println(tranCommonInfo("log.info(\"窗前明月光 {} {}\", code1, code2)")); // log.info("窗前明月光 " + code1 + " " + code2 + ")
-        System.out.println(tranCommonInfo("log.info(\"窗前{}明月{}光\", code1, code2)"));// log.info("窗前" + code1 + "明月" + code2 + "光)
-        System.out.println(tranCommonInfo("log.info(\"{}窗前{}明月光\", code1, code2)")); // log.info("" + code1 + "窗前" + code2 + "明月光)
+        HashSet<int[]> ints = new HashSet<>();
+        ints.add(new int[]{1, 2});
+        ints.add(new int[]{1, 2});
+
+        System.out.println(ints.size());
     }
 
     /**
