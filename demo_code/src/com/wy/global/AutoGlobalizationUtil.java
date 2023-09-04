@@ -51,15 +51,17 @@ public class AutoGlobalizationUtil {
 
         System.out.println((file.getName() + "国际化处理 start"));
         List<String> result = new ArrayList<>();
-
+        int lineNum = 1;
         for (String line : FileUtil.readLines(file, CODE_TYPE_UTF8)) {
             try {
                 line = GlobalizeHandler.handler(line);
             } catch (Exception e) {
-                System.out.println("ERROR!!!" + file.getName() + "国际化异常");
-                ERROR_LOG_LIST.add(file.getName() + "国际化异常: " + e.getMessage());
+                String errorMsg = String.format("ERROR!!! %s 第 %s 行国际化异常", file.getName(), lineNum);
+                System.out.println(errorMsg);
+                ERROR_LOG_LIST.add(String.format("%s, 原因是：%s", errorMsg, e));
             }
             result.add(line);
+            lineNum++;
         }
 
         if (GlobalizeHandler.isShouldGlobalizeFlag()) {

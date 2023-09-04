@@ -23,15 +23,8 @@ public class YouDaoTranslateUtil {
     private static final String APP_KEY = "4b7128474f5adf98";     // 您的应用ID
     private static final String APP_SECRET = "432tthwj1Dt0JgKOqZvYOApBLJbXmTwc";  // 您的应用密钥
 
-    private static final Pattern englishPattern = Pattern.compile("[A-Za-z\\s']+");
-
-    private static Pattern pattern = Pattern.compile("[^\\p{IsLetter}\\p{IsDigit}]+");
-
-
     public static String translateCN2EN(String info) throws NoSuchAlgorithmException {
         System.out.println((info + " 请求有道云API start"));
-        Matcher matcher1 = pattern.matcher(info);
-        info = matcher1.replaceAll("");
         // 添加请求参数
         Map<String, String[]> params = createRequestParams();
         params.put("q", new String[]{info});
@@ -41,14 +34,18 @@ public class YouDaoTranslateUtil {
         byte[] result = HttpUtil.doPost("https://openapi.youdao.com/api", null, params, "application/json");
         // 打印返回结果
         if (result != null) {
-            JSONObject jsonObject = JSON.parseObject(new String(result, StandardCharsets.UTF_8));
-            Matcher matcher = englishPattern.matcher(jsonObject.get("translation").toString());
-            if (matcher.find()) {
-                System.out.println((info + " 请求有道云API end; 译文为：" + matcher.group()));
-                return matcher.group();
+            String resultStr = JSON.parseObject(new String(result, StandardCharsets.UTF_8)).get("translation").toString();
+            if (resultStr.startsWith("[\"")) {
+                resultStr = resultStr.replace("[\"", "");
             }
+            if (resultStr.endsWith("\"]")) {
+                resultStr = resultStr.replace("\"]", "");
+            }
+
+            System.out.println((info + " 请求有道云API end 翻译结果为：") + resultStr);
+            return resultStr;
         }
-        System.out.println((info + " 请求有道云API end; 请求异常"));
+
         throw new RuntimeException("有道云翻译异常");
     }
     private static Map<String, String[]> createRequestParams() {
@@ -67,5 +64,9 @@ public class YouDaoTranslateUtil {
             put("to", new String[]{to});
             put("domain", new String[]{domain});
         }};
+    }
+
+    public static void main(String[] args) throws Exception{
+        System.out.println(translateCN2EN("核查中心配置无效，实体 %s 不存在;"));
     }
 }

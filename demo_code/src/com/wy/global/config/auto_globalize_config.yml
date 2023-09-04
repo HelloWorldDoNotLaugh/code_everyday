@@ -3,6 +3,7 @@ should_global_factor_list:
   - return
   - log
   - ApiResult
+  - LogUtil
 
 
 project_path: /Users/helloworld/workspace/code/yuntu-qiming/yuntu-feature/schedule-center/schedule-task-biz/src/main/java/cn/tongdun/yuntu/schedule/task/biz/service

@@ -13,6 +13,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -21,6 +22,7 @@ import java.util.regex.Pattern;
  * @email helloworld.dng@gmail.com
  */
 public class GlobalizeHandler {
+    private static Pattern englishPattern = Pattern.compile("[^\\s\\p{IsLetter}\\p{IsDigit}]+");
 
     private static final String CONFIG_FILE_PATH = "/Users/helloworld/code/code_everyday/demo_code/src/com/wy/global/config/auto_globalize_config.yml";
 
@@ -39,16 +41,18 @@ public class GlobalizeHandler {
     /** 结尾丢失”的字符串*/
     private static Pattern endPattern = Pattern.compile(".*\"[^\"]*\\)");
 
-    private static Integer APPEND_LINES;
+    private static Integer APPEND_LINES = getAppendLines();
 
     private static boolean shouldGlobalizeFlag = false;
 
-    static {
+    private static int getAppendLines() {
+        int result = 0;
         for (int i = 0; i < LOCALE_MESSAGE_ENUM_LIST.size(); i++) {
             if (LOCALE_MESSAGE_ENUM_LIST.get(i).trim().startsWith("public enum LocaleMessageEnum")) {
-                APPEND_LINES = i + 1;
+                result = i + 1;
             }
         }
+        return result;
     }
 
 
@@ -78,13 +82,12 @@ public class GlobalizeHandler {
      *               log.info(String.format("窗前%s明月光", code))
      */
     private static String globalizeHandler(String info, boolean onlyTranslateFlag) throws Exception{
-        info = tranCommonInfo(info);
         List<String> chineseInfoList = getChineseInfoList(info);
 
-        shouldGlobalizeFlag = CollUtil.isNotEmpty(chineseInfoList);
+        shouldGlobalizeFlag = shouldGlobalizeFlag ? true : CollUtil.isNotEmpty(chineseInfoList);
 
         for (String chineseInfo : chineseInfoList) {
-            String globalizeInfo = getGlobalizeInfo(chineseInfo);
+            String globalizeInfo = getGlobalizeInfo(chineseInfo, onlyTranslateFlag);
             if (CharSequenceUtil.isBlank(globalizeInfo)) {
                 globalizeInfo = globalize(chineseInfo, onlyTranslateFlag);
             }
@@ -145,9 +148,12 @@ public class GlobalizeHandler {
         return line;
     }
 
-    private static String getGlobalizeInfo(String info) {
+    private static String getGlobalizeInfo(String info, boolean onlyTranslateFlag) {
         for (String s : MESSAGES_LIST) {
             if (s.contains(info)) {
+                if (onlyTranslateFlag) {
+                    return s.split("=")[0].replace("_", " ");
+                }
                 return String.format("I18nUtil.getLocaleMessage(LocaleMessageEnum.%s)", s.split("=")[0].toUpperCase());
             }
         }
@@ -163,11 +169,17 @@ public class GlobalizeHandler {
             return englishInfo;
         }
 
-        String englishFormatInfo = englishInfo.replace(" ", "_");
+        Matcher matcher = englishPattern.matcher(englishInfo);
+        String englishFormatInfo = matcher.replaceAll("");
+        englishFormatInfo = englishFormatInfo.replace(" ", "_");
+        englishFormatInfo = englishFormatInfo.replace("__", "_");
+        if (englishFormatInfo.endsWith("_")) {
+            englishFormatInfo = englishFormatInfo.substring(0, englishFormatInfo.length() - 1);
+        }
         MESSAGES_LIST.add(String.format("%s=%s", englishFormatInfo, chineseInfo));
         MESSAGES_CN_LIST.add(String.format("%s=%s", englishFormatInfo, chineseInfo));
         MESSAGES_EN_LIST.add(String.format("%s=%s", englishFormatInfo, englishInfo));
-        LOCALE_MESSAGE_ENUM_LIST.add(APPEND_LINES, englishFormatInfo.toUpperCase() + ",");
+        LOCALE_MESSAGE_ENUM_LIST.add(APPEND_LINES, "\t" + englishFormatInfo.toUpperCase() + ",");
 
         return String.format("I18nUtil.getLocaleMessage(LocaleMessageEnum.%s)", englishFormatInfo.toUpperCase());
     }
@@ -262,6 +274,7 @@ public class GlobalizeHandler {
     }
 
     public static void main(String[] args) throws Exception{
-        System.out.println(handler("                        log.error(\"回调 【{}】 任务失败\", item.getName(), e);\n"));
+        System.out.println(handler("            LogUtil.info(\"找不到实例（{}）对应的任务编排，有可能被删\", taskflowInstanceLogDO.getUuid());\n"));
+        System.exit(1);
     }
 }
