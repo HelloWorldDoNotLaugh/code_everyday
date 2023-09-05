@@ -1,8 +1,6 @@
 package com.wy.leetcode.practise_30;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -41,7 +39,7 @@ public class Day16 {
         int pivotIndex = left;
 
         for (int i = left; i < right; i++) {
-            if (append(nums[i]).compareTo(append(pivot)) < 0) {
+            if (compare(nums[i], pivot) < 0) {
                 swap(nums, i, pivotIndex);
                 pivotIndex++;
             }
@@ -50,33 +48,45 @@ public class Day16 {
         return pivotIndex;
     }
 
-    private void swap(int[]nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
-    }
 
-    private String append(int num) {
-        String numStr = String.valueOf(num);
-        String substring = numStr.substring(numStr.length() - 1);
-        while (numStr.length() < 10) {
-            numStr = numStr + substring;
-        }
-        return numStr;
+
+    private int compare(int m, int n) {
+        return (""+m+n).compareTo(""+n+m);
     }
 
     public static void main(String[] args) {
         Day16 day16 = new Day16();
 
-        System.out.println(day16.minNumber(new int[]{824,938,1399,5607,6973,5703,9609,4398,8247}));
+        //System.out.println(day16.minNumber(new int[]{824,938,1399,5607,6973,5703,9609,4398,8247}));
+        System.out.println(day16.isStraight(new int[]{0, 7, 1, 3, 5}));
     }
 
-    private static Integer[] getData(String str) {
-        return Arrays.stream(str.replace("[", "").replace("]", "").split(","))
-                .map(Integer::parseInt)
-                .toArray(Integer[]::new);
+    /**
+     * @description 剑指 Offer 61. 扑克牌中的顺子
+     * @author yuyang.zhang
+     * @date 2023/9/5 09:42
+     * @param nums
+     * @return boolean
+     */
+    public boolean isStraight(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        int max = 0, min = 14;
+        for (int num : nums) {
+            if (num == 0) {continue;}
+            if (set.contains(num)) {return false;}
+
+            max = Math.max(max, num);
+            min = Math.min(min, num);
+            set.add(num);
+        }
+
+        return max - min <= 4;
     }
 
-    //"1399439856075703697382482479389609"
-    //"13994398560757036973 8247 824 9389609"
+
+    private void swap(int[]nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 }
