@@ -1,10 +1,7 @@
 package com.wy.leetcode.practise_30;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author yuyang.zhang
@@ -61,45 +58,28 @@ public class Day17 {
 
 
     static class MedianFinder {
-        private LinkedList<Integer> datas;
+        Queue<Integer> bigHeap, smallHeap;
 
-        /** initialize your data structure here. */
         public MedianFinder() {
-            datas = new LinkedList<>();
+            // 小顶堆保存较大的数
+            smallHeap = new PriorityQueue<>();
+            // 大顶堆保存较小堆数
+            bigHeap = new PriorityQueue<>((x, y)-> (y - x));
         }
 
         public void addNum(int num) {
-            int left = 0;
-            int right = datas.size()-1;
-            int index = 0;
-            while (left <= right) {
-                index = left + (right-left)/2;
-                if (num == datas.get(index)) {
-                    index++;
-                    break;
-                } else if (num < datas.get(index)) {
-                    right = index - 1;
-                } else {
-                    left = index + 1;
-                    index = left;
-                }
+            if (bigHeap.size() != smallHeap.size()) {
+                smallHeap.add(num);
+                bigHeap.add(smallHeap.poll());
+            } else {
+                bigHeap.add(num);
+                smallHeap.add(bigHeap.poll());
             }
-            index = index < 0 ? 0 : index;
-            datas.add(index, num);
         }
 
         public double findMedian() {
-            if (datas.size() % 2 == 1) {
-                if (datas.size() == 1) {
-                    return datas.get(0);
-                }
-                return datas.get(datas.size()/2);
-            }
-
-
-            return (double) (datas.get(datas.size() / 2) + datas.get(datas.size() / 2 - 1)) / 2;
+            return smallHeap.size() != bigHeap.size() ? smallHeap.peek() : (smallHeap.peek() + bigHeap.peek()) / 2.0;
         }
-
     }
 
 }
