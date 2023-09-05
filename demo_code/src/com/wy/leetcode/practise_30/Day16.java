@@ -12,7 +12,6 @@ import java.util.stream.Stream;
  * @email helloworld.dng@gmail.com
  */
 public class Day16 {
-    private static final String[] NINE_STR_ARR= {"", "9", "99", "999", "9999", "99999", "999999", "9999999", "99999999", "999999999"};
     public String minNumber(int[] nums) {
         quickSort(nums);
         return Arrays.stream(nums).mapToObj(String::valueOf).collect(Collectors.joining());
@@ -42,7 +41,7 @@ public class Day16 {
         int pivotIndex = left;
 
         for (int i = left; i < right; i++) {
-            if (append9(nums[i]).compareTo(append9(pivot)) < 0) {
+            if (append(nums[i]).compareTo(append(pivot)) < 0) {
                 swap(nums, i, pivotIndex);
                 pivotIndex++;
             }
@@ -57,19 +56,19 @@ public class Day16 {
         nums[j] = temp;
     }
 
-    private String append9(int num) {
+    private String append(int num) {
         String numStr = String.valueOf(num);
-        if (numStr.length() < 10) {
-            numStr = numStr + NINE_STR_ARR[10-numStr.length()];
+        String substring = numStr.substring(numStr.length() - 1);
+        while (numStr.length() < 10) {
+            numStr = numStr + substring;
         }
-
         return numStr;
     }
 
     public static void main(String[] args) {
         Day16 day16 = new Day16();
 
-        System.out.println(day16.minNumber(new int[]{3,30,34,5,9}));
+        System.out.println(day16.minNumber(new int[]{824,938,1399,5607,6973,5703,9609,4398,8247}));
     }
 
     private static Integer[] getData(String str) {
@@ -77,4 +76,7 @@ public class Day16 {
                 .map(Integer::parseInt)
                 .toArray(Integer[]::new);
     }
+
+    //"1399439856075703697382482479389609"
+    //"13994398560757036973 8247 824 9389609"
 }
