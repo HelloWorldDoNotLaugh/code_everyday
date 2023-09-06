@@ -1,4 +1,4 @@
-package com.wy.leetcode;
+package com.wy.leetcode.practise_30;
 
 import com.wy.leetcode.tree.TreeNode;
 
