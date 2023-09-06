@@ -1,5 +1,7 @@
 package com.wy.leetcode.practise_30;
 
+import com.wy.leetcode.tree.TreeNode;
+
 import java.util.*;
 
 /**
@@ -106,7 +108,7 @@ public class Day07 {
      * @author HelloWorld
      * @create 2023/7/23 10:26
      * @param root
-     * @return com.wy.leetcode.practise_30.TreeNode
+     * @return com.wy.leetcode.tree.TreeNode
      *
      *  本质是交换每一层级的左右节点
      */
