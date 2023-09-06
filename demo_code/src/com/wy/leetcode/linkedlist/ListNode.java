@@ -24,16 +24,20 @@ public class ListNode {
     public ListNode(){}
 
     public static ListNode initLinkedList(int... values) {
-        final ListNode[] head = {new ListNode()};
-        Arrays.stream(values)
-                .mapToObj(Integer::new)
-                .sorted(((a,b) -> -1))
-                .forEach(value -> {
-                    ListNode node = new ListNode(value);
-                    node.next = head[0];
-                    head[0] = node;
-                });
-        return head[0];
+        ListNode head = null;
+        ListNode tail = null;
+        for (int value : values) {
+            ListNode tempNode = new ListNode(value);
+
+            if (head == null) {
+                head = tempNode;
+                tail = tempNode;
+            } else {
+                tail.next = tempNode;
+                tail = tempNode;
+            }
+        }
+        return head;
     }
 
     public static void print(ListNode head) {
