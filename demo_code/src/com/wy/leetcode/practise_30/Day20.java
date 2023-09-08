@@ -2,6 +2,10 @@ package com.wy.leetcode.practise_30;
 
 import com.wy.leetcode.tree.TreeNode;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author yuyang.zhang
  * @Description
@@ -30,6 +34,27 @@ public class Day20 {
      *    整体思路还是递归，先找根节点，构建左子树，右子树
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return null;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+
+        return buildTree(map, preorder, inorder);
     }
+
+    private TreeNode buildTree(Map<Integer, Integer>map, int[] preorder, int[] inorder) {
+        TreeNode root = new TreeNode(preorder[0]);
+
+        //todo 直接 return
+        if (true) {
+            return root;
+        }
+        int[] inorder_left = Arrays.copyOfRange(inorder, 0, map.get(root.val));
+        int[] inorder_right = Arrays.copyOfRange(inorder, map.get(root.val)+1, inorder.length);
+
+        // 构建右子树
+        root.left = buildTree(map, )
+    }
+
+
 }
