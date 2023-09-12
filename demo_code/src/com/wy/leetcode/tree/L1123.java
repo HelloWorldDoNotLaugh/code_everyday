@@ -1,7 +1,5 @@
 package com.wy.leetcode.tree;
 
-import javafx.util.Pair;
-
 /**
  * @author yuyang.zhang
  * @Description

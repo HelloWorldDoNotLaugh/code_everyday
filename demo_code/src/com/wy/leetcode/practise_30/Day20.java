@@ -3,8 +3,7 @@ package com.wy.leetcode.practise_30;
 import com.wy.leetcode.tree.TreeNode;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * @author yuyang.zhang
@@ -34,27 +33,65 @@ public class Day20 {
      *    整体思路还是递归，先找根节点，构建左子树，右子树
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i], i);
+        if (preorder.length == 0) {
+            return null;
         }
 
-        return buildTree(map, preorder, inorder);
-    }
-
-    private TreeNode buildTree(Map<Integer, Integer>map, int[] preorder, int[] inorder) {
         TreeNode root = new TreeNode(preorder[0]);
-
-        //todo 直接 return
-        if (true) {
+        if (preorder.length == 1) {
             return root;
         }
-        int[] inorder_left = Arrays.copyOfRange(inorder, 0, map.get(root.val));
-        int[] inorder_right = Arrays.copyOfRange(inorder, map.get(root.val)+1, inorder.length);
 
-        // 构建右子树
-        root.left = buildTree(map, )
+        // 找到根节点在中序遍历中的index
+        int rootIndex = getRootIndex(inorder, root.val);
+
+        int[] leftInorder = Arrays.copyOfRange(inorder, 0, rootIndex);
+        int[] rightInorder = Arrays.copyOfRange(inorder, rootIndex+1, inorder.length);
+
+        int[] leftPreorder = Arrays.copyOfRange(preorder, 1, leftInorder.length+1);
+        int[] rightPreorder = Arrays.copyOfRange(preorder, leftInorder.length + 1, preorder.length);
+
+        root.left = buildTree(leftPreorder, leftInorder);
+        root.right = buildTree(rightPreorder, rightInorder);
+
+        return root;
+    }
+
+    private int getRootIndex(int[] inorder, int root) {
+        for (int i = 0; i < inorder.length; i++) {
+            if (inorder[i] == root) {
+                return i;
+            }
+        }
+
+        throw new NullPointerException("Not Found Root");
     }
 
 
+    public double myPow(double x, int n) {
+        if (n == 0 || x == 1) {
+            return 1;
+        }
+
+        if (n < 0) {
+            n = n * -1;
+            x = 1 / x;
+        }
+
+
+        double result = 1;
+        for (int i = 0; i < n; i++) {
+            result = result * x;
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Day20 day20 = new Day20();
+
+        TreeNode treeNode = day20.buildTree(new int[]{1, 2, 3, 4, 5}, new int[]{5, 4, 3, 2, 1});
+
+        TreeNode.levelOrderTraversal(treeNode);
+    }
 }
