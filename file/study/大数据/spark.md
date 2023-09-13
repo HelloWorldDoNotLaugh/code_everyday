@@ -110,3 +110,44 @@ wordCounts.map{case (k, v) => (v, k)}.sortByKey(false).take(5)
 
 ![image-20230913151327864](./spark.assets/image-20230913151327864.png)
 
+## RDD内部的数据转换
+
+**创建RDD的两种方式** 
+
+* 通过SparkContext.parallelize在内部数据上创建RDD
+* 通过SparkContext.textFile等API从外部数据创建RDD
+
+**基于内部数据创建**
+
+```scala
+import org.apache.spark.rdd.RDD
+val words: Array[String] = Array("Spark", "is", "cool")
+val rdd: RDD[String] = sc.parallelize(words)
+```
+
+**基于外部数据创建**
+
+```scala
+import org.apache.spark.rdd.RDD
+val rootPath: String = _
+val file: String = s"${rootPath}/wikiOfSpark.txt"
+// 读取文件内容
+val lineRDD: RDD[String] = spark.sparkContext.textFile(file)
+```
+
+### map：以元素为粒度的数据转换
+
+**map算子的用法**：给定映射函数f，map(f)以元素为粒度对RDD做数据转换。
+
+```scala
+// 把普通RDD转换为Paired RDD
+val cleanWordRDD: RDD[String] = _ // 请参考第一讲获取完整代码
+val kvRDD: RDD[(String, Int)] = cleanWordRDD.map(word => (word, 1))
+```
+
+其中 word => (word, 1) 是匿名函数
+
+### mapPartitions：以数据分区为粒度对数据转换
+
+**mapPartitions算子用法**： 以数据分区为粒度，使用映射函数f对RDD进行函数数据转换
+
