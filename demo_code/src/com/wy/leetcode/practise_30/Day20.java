@@ -3,6 +3,9 @@ package com.wy.leetcode.practise_30;
 import com.wy.leetcode.tree.TreeNode;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 
 
 /**
@@ -87,11 +90,94 @@ public class Day20 {
         return result;
     }
 
+
+    /**
+     * @description 剑指 Offer 33. 二叉搜索树的后序遍历序列
+     * @author HelloWorld
+     * @create 2023/9/13 16:44
+     * @param postorder
+     * @return boolean
+     *  二叉搜索树一定满足 左 < 根 < 右
+     *  所以依次检查是否满足这个关系
+     */
+    public boolean verifyPostorder(int[] postorder) {
+        // 当树的长度 <= 2时，因为无法判定左子树和右子树，所以一定是后续结果
+        if (postorder.length <= 2) {
+            return true;
+        }
+
+        int root = findRoot(postorder);
+        int[] leftChild = findLeftChild(postorder, root);
+        int[] rightChild = findRightChild(postorder, leftChild.length, root);
+
+        if (leftChild.length + rightChild.length + 1 != postorder.length) {
+            return false;
+        }
+
+        boolean leftIsOk = verifyPostorder(leftChild);
+        boolean rightIsOk = verifyPostorder(rightChild);
+
+        return leftIsOk && rightIsOk;
+    }
+
+    /**
+     * @description 寻找根节点：对于二叉搜索树后序遍历 根一定是最后一个元素
+     * @author HelloWorld
+     * @create 2023/9/13 17:31
+     * @param postorder
+     * @return int
+     */
+    private int findRoot(int[] postorder) {
+        return postorder[postorder.length - 1];
+    }
+
+    /**
+     * @description 寻找左子树：从第一个元素开始 到 第一个大于根的元素为止
+     * @author HelloWorld
+     * @create 2023/9/13 17:32
+     * @param postorder
+     * @param root
+     * @return int[]
+     */
+    private int[] findLeftChild(int[] postorder, int root) {
+        return findChild(postorder, 0, root, (a,b) -> a < b);
+    }
+
+    /**
+     * @description 寻找右子树：从左子树的最后一个元素的下一位置开始 到 第一个小于root的元素为止
+     * @author HelloWorld
+     * @create 2023/9/13 17:34
+     * @param postorder
+     * @param startIndex
+     * @param root
+     * @return int[]
+     */
+    private int[] findRightChild(int[] postorder, int startIndex, int root) {
+        return findChild(postorder, startIndex, root, (a,b) -> a > b);
+    }
+
+    private int[] findChild(int[] postorder, int startIndex, int root, BiPredicate<Integer, Integer> comparator) {
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = startIndex; i < postorder.length; i++) {
+            if (comparator.test(postorder[i], root)) {
+                list.addLast(postorder[i]);
+            } else {
+                break;
+            }
+        }
+
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+
+
     public static void main(String[] args) {
         Day20 day20 = new Day20();
 
-        TreeNode treeNode = day20.buildTree(new int[]{1, 2, 3, 4, 5}, new int[]{5, 4, 3, 2, 1});
-
-        TreeNode.levelOrderTraversal(treeNode);
+        System.out.println(day20.verifyPostorder(new int[]{1,2,5,10,6,9,4,3}));
     }
 }
