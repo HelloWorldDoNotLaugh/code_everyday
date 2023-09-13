@@ -15,11 +15,11 @@ bin目录下：
 
 先准备个txt文件
 
-![image-20230913115048085](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913115048085.png)
+![image-20230913115048085](./spark.assets/image-20230913115048085.png)
 
 依次敲入代码
 
-![image-20230913115125024](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913115125024.png)
+![image-20230913115125024](./spark.assets/image-20230913115125024.png)
 
 ```scala
 import org.apache.spark.rdd.RDD
@@ -44,7 +44,7 @@ wordCounts.map{case (k, v) => (v, k)}.sortByKey(false).take(5)
 
 效果：	
 
-![image-20230913115329596](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913115329596.png)
+![image-20230913115329596](./spark.assets/image-20230913115329596.png)
 
 ## RDD与编程模型
 
@@ -52,7 +52,7 @@ wordCounts.map{case (k, v) => (v, k)}.sortByKey(false).take(5)
 
 RDD是一种抽象，是Spark对于分布式数据集的抽象，它用于囊括所有内存中和磁盘中的分布式数据实体。
 
-![image-20230913140026484](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913140026484.png)
+![image-20230913140026484](./spark.assets/image-20230913140026484.png)
 
 **RDD的四大属性** 
 
@@ -75,7 +75,7 @@ RDD到RDD间的转换，本质上是数据形态间的转换(Transformations)
 
 **Actions类算子**将计算结果收集起来，或是物化到磁盘。
 
-![image-20230913142638048](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913142638048.png)
+![image-20230913142638048](./spark.assets/image-20230913142638048.png)
 
 ```scala
 import org.apache.spark.rdd.RDD
@@ -104,9 +104,9 @@ wordCounts.map{case (k, v) => (v, k)}.sortByKey(false).take(5)
 
 **2. 通过Actions类算子，以回溯的方式触发执行这个计算流图。**
 
-![image-20230913150833052](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913150833052.png)
+![image-20230913150833052](./spark.assets/image-20230913150833052.png)
 
 在调用各种Transformations算子做数据转换时，并没有立即执行计算，只有调用Action算子时，之前调用的Transformations才会被计算。这样的计算模式被称为**延迟计算**
 
-![image-20230913151327864](/Users/helloworld/code/code_everyday/file/study/大数据/spark.assets/image-20230913151327864.png)
+![image-20230913151327864](./spark.assets/image-20230913151327864.png)
 
