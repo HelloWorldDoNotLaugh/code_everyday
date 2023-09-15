@@ -23,4 +23,16 @@ public class DataUtil {
 
         return result;
     }
+
+    public static int[] getArray(String data) {
+        String[] split = data.replace("[", "").replace("]", "").split(",");
+        int[] result = new int[split.length];
+
+        int index = 0;
+        for (String s : split) {
+            result[index++] = Integer.parseInt(s.trim());
+        }
+
+        return result;
+    }
 }
