@@ -6,6 +6,7 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.text.CharSequenceUtil;
 import com.wy.global.config.GlobalizeConfig;
 import com.wy.global.util.YouDaoTranslateUtil;
+import com.wy.mycode.ExcelUtils;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;
@@ -24,26 +25,34 @@ import java.util.regex.Pattern;
 public class GlobalizeHandler {
     private static Pattern englishPattern = Pattern.compile("[^\\s\\p{IsLetter}\\p{IsDigit}]+");
 
-    private static final String CONFIG_FILE_PATH = "/Users/helloworld/code/code_everyday/demo_code/src/com/wy/global/config/auto_globalize_config.yml";
+    private static final String CONFIG_FILE_PATH = "/Users/td/code/project/code_everyday/demo_code/src/com/wy/global/config/auto_globalize_config.yml";
 
     private static GlobalizeConfig globalizeConfig = initGlobalConfig();
 
     private static final String CODE_TYPE_UTF8 = "UTF-8";
 
-    private static List<String> MESSAGES_LIST = FileUtil.readLines(globalizeConfig.getMessagesPath(),  CODE_TYPE_UTF8);
-    private static List<String> MESSAGES_CN_LIST = FileUtil.readLines(globalizeConfig.getMessagesCnPath(), CODE_TYPE_UTF8);
-    private static List<String> MESSAGES_EN_LIST = FileUtil.readLines(globalizeConfig.getMessagesEnPath(), CODE_TYPE_UTF8);
+    private static List<String> MESSAGES_LIST;
+    private static List<String> MESSAGES_CN_LIST;
+    private static List<String> MESSAGES_EN_LIST;
+    private static List<String> LOCALE_MESSAGE_ENUM_LIST;
 
-    private static List<String> LOCALE_MESSAGE_ENUM_LIST = FileUtil.readLines(globalizeConfig.getLocaleMessageEnumPath(), CODE_TYPE_UTF8);
-
-    private static Pattern chinesePattern = Pattern.compile("[\\u4e00-\\u9fa5]");
+    public static Pattern chinesePattern = Pattern.compile("[\\u4e00-\\u9fa5]");
 
     /** 结尾丢失”的字符串*/
     private static Pattern endPattern = Pattern.compile(".*\"[^\"]*\\)");
 
-    private static Integer APPEND_LINES = getAppendLines();
+    private static Integer APPEND_LINES;
 
     private static boolean shouldGlobalizeFlag = false;
+
+    static {
+        try {
+            init();
+            APPEND_LINES = getAppendLines();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     private static int getAppendLines() {
         int result = 0;
@@ -55,6 +64,12 @@ public class GlobalizeHandler {
         return result;
     }
 
+    private static void init() {
+        MESSAGES_LIST = FileUtil.readLines(globalizeConfig.getMessagesPath(),  CODE_TYPE_UTF8);
+        MESSAGES_CN_LIST = FileUtil.readLines(globalizeConfig.getMessagesCnPath(), CODE_TYPE_UTF8);
+        MESSAGES_EN_LIST = FileUtil.readLines(globalizeConfig.getMessagesEnPath(), CODE_TYPE_UTF8);
+        LOCALE_MESSAGE_ENUM_LIST = FileUtil.readLines(globalizeConfig.getLocaleMessageEnumPath(), CODE_TYPE_UTF8);
+    }
 
     public static String handler(String info) throws Exception{
         String firstWord = info.trim().split(" ")[0].split("\\.")[0];
@@ -263,6 +278,11 @@ public class GlobalizeHandler {
         FileUtil.writeLines(MESSAGES_EN_LIST, globalizeConfig.getMessagesEnPath(), CODE_TYPE_UTF8);
         FileUtil.writeLines(LOCALE_MESSAGE_ENUM_LIST, globalizeConfig.getLocaleMessageEnumPath(), CODE_TYPE_UTF8);
         FileUtil.writeLines(errorInfoList, globalizeConfig.getErrorLogPath(), CODE_TYPE_UTF8);
+    }
+
+
+    public static void writeInfoLog(List<List<String>> infoList) throws Exception {
+        ExcelUtils.writeExcel(infoList, globalizeConfig.getInfoLogPath());
     }
 
     public static GlobalizeConfig getGlobalizeConfig() {

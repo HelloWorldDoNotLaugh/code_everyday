@@ -6,6 +6,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,23 +62,22 @@ public class ExcelUtils {
      * @return void
      */
     public static void writeExcel(List<List<String>> datas, String filePath ) throws Exception {
-        XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(filePath));
+        XSSFWorkbook workbook = new XSSFWorkbook(Files.newInputStream(Paths.get(filePath)));
         Sheet sheet = workbook.getSheetAt(0);
 
-        int rows = 2;
+        int rows = 1;
 
         for (List<String> data : datas) {
             Row row = sheet.createRow(rows++);
-            Cell cell = row.createCell(0);
-            cell.setCellValue(data.get(0));
-            Cell cell1 = row.createCell(1);
-            cell1.setCellValue(data.get(1));
-            for (int i = 2; i <= 14; i++) {
-                row.createCell(i);
+            int lineNum = 0;
+            for (String str : data) {
+                Cell cell = row.createCell(lineNum);
+                cell.setCellValue(str);
+                lineNum++;
             }
         }
 
-        workbook.write(new FileOutputStream(filePath));
+        workbook.write(Files.newOutputStream(Paths.get(filePath)));
 
     }
 
