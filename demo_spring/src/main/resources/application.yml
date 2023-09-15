@@ -3,3 +3,19 @@ server:
 
 
 login.service: com.wy.spring_demo.service.impl.NoLoginServiceImpl
+
+
+invokerecord.store.es.clusterName: elasticsearch
+invokerecord.store.es.hostList: 10.58.11.10:19200,10.58.11.11:19200,10.58.11.12:19200
+invokerecord.store.es.indexReadPrefix: invokerecord2-r-
+invokerecord.store.es.indexWritePrefix: invokerecord2-w-
+invokerecord.store.es.indexPrefix: invokerecord2-
+invokerecord.store.es.username: elastic
+invokerecord.store.es.password: changeme
+invokerecord.store.es.dependRouteFields: [{table:"invokerecord",field:"statDate"}]
+invokerecord.store.es.indexAutoCreateEnable: false
+invokerecord.store.es.partitionPolicy: day
+invokerecord.store.es.indexInterval: 30
+invokerecord.store.es.indexTemplatePath: config/tiangong_invokerecord_template.json
+
+
