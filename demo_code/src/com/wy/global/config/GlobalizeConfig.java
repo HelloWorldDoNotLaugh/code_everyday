@@ -22,6 +22,7 @@ public class GlobalizeConfig {
     private String localeMessageEnumPath;
 
     private String errorLogPath;
+    private String infoLogPath;
 
     public List<String> getShouldGlobalFactorList() {
         return shouldGlobalFactorList;
@@ -77,5 +78,17 @@ public class GlobalizeConfig {
 
     public void setErrorLogPath(String errorLogPath) {
         this.errorLogPath = errorLogPath;
+    }
+
+    public void setShouldGlobalFactorList(List<String> shouldGlobalFactorList) {
+        this.shouldGlobalFactorList = shouldGlobalFactorList;
+    }
+
+    public String getInfoLogPath() {
+        return infoLogPath;
+    }
+
+    public void setInfoLogPath(String infoLogPath) {
+        this.infoLogPath = infoLogPath;
     }
 }

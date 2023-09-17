@@ -2,11 +2,14 @@ package com.wy.global;
 
 import cn.hutool.core.io.FileUtil;
 
+import cn.hutool.poi.excel.ExcelUtil;
 import com.wy.global.handler.GlobalizeHandler;
+import com.wy.mycode.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
 
 /**
  * @author HelloWorld
@@ -20,13 +23,15 @@ public class AutoGlobalizationUtil {
 
     private static List<String> ERROR_LOG_LIST = new ArrayList<>();
 
-    public static void main(String[] args) {
+    private static List<List<String>> SHOULD_GLOBAL_FILE_LIST = new ArrayList<>();
+
+    public static void main(String[] args) throws Exception {
         String filePath = GlobalizeHandler.getGlobalizeConfig().getProjectPath();
         traverseFolder(new File(filePath));
         System.exit(1);
     }
 
-    public static void traverseFolder(File inputFile) {
+    public static void traverseFolder(File inputFile) throws Exception {
         Stack<File> fileStack = new Stack<>();
         fileStack.push(inputFile);
 
@@ -36,12 +41,61 @@ public class AutoGlobalizationUtil {
                 if (file.isDirectory()) {
                     fileStack.push(file);
                 } else {
-                    globalizeJava(file);
+                    //globalizeJava(file);
+                    logShouldGlobalFile(file);
                 }
             }
         }
 
-        GlobalizeHandler.writeFile(ERROR_LOG_LIST);
+        //GlobalizeHandler.writeFile(ERROR_LOG_LIST);
+        GlobalizeHandler.writeInfoLog(SHOULD_GLOBAL_FILE_LIST);
+    }
+
+    private static void logShouldGlobalFile(File file) {
+        String fileName = file.getName();
+
+        if (!fileName.endsWith(".java")) {
+            return;
+        }
+
+        int lineNum = 0;
+        for (String line : FileUtil.readLines(file, CODE_TYPE_UTF8)) {
+            lineNum++;
+            if (isNotCode(line)) {
+                continue;
+            }
+            Matcher matcher = GlobalizeHandler.chinesePattern.matcher(line);
+            if (matcher.find()) {
+                if (!line.contains("\"")) {
+                    continue;
+                }
+                if (line.length() > 999) {
+                    line = line.substring(0, 100);
+                }
+                ArrayList<String> tempInfoList = new ArrayList<>();
+                tempInfoList.add(fileName);
+                tempInfoList.add(String.valueOf(lineNum));
+                tempInfoList.add(line.trim());
+                SHOULD_GLOBAL_FILE_LIST.add(tempInfoList);
+            }
+        }
+    }
+
+    private static boolean isNotCode(String line) {
+        line = line.trim();
+        if (line.startsWith("//")) {
+            return true;
+        }
+
+        if (line.startsWith("*")) {
+            return true;
+        }
+
+        // swagger文档不需要国际化
+        if (line.startsWith("@Api")) {
+            return true;
+        }
+        return false;
     }
 
     private static void globalizeJava(File file)  {

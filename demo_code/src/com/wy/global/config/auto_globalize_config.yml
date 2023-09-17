@@ -6,7 +6,7 @@ should_global_factor_list:
   - LogUtil
 
 
-project_path: /Users/helloworld/workspace/code/yuntu-qiming/yuntu-feature/schedule-center/schedule-task-biz/src/main/java/cn/tongdun/yuntu/schedule/task/biz/service
+project_path: /Users/td/code/project/yuntu-aml
 messages_path: /Users/helloworld/code/pro/messages.properties
 messages_cn_path: /Users/helloworld/code/pro/messages_cn.properties
 messages_en_path: /Users/helloworld/code/pro/messages_en.properties
@@ -14,3 +14,6 @@ locale_message_enum_path: /Users/helloworld/code/pro/LocaleMessageEnum.java
 
 
 error_log_path: /Users/helloworld/code/code_everyday/demo_code/src/com/wy/global/log/error.log
+
+info_log_path: /Users/td/code/project/code_everyday/demo_code/src/com/wy/global/log/info.xlsx
+
