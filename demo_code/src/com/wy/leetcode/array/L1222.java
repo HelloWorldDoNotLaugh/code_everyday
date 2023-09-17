@@ -10,10 +10,19 @@ import java.util.function.BiPredicate;
  * @email helloworld.dng@gmail.com
  */
 public class L1222 {
+    /**
+     * @description
+     * @author HelloWorld
+     * @return java.util.List<java.util.List<java.lang.Integer>>
+     *   实际上就是找几个方向上离king最近的那一个queen
+     */
     public List<List<Integer>> queensAttacktheKing(int[][] queens, int[] king) {
         HashMap<AttackWay, Map<Boolean, AttackQueen>> map = new HashMap<>();
+
         for (int[] queen : queens) {
+            // 匹配攻击方式
             AttackWay attackWay = AttackWay.getAttackWay(queen, king);
+            // 无法攻击直接下一个
             if (attackWay.equals(AttackWay.N)) {
                 continue;
             }
@@ -62,9 +71,6 @@ public class L1222 {
         BiPredicate<int[], int[]> aheadBiPredicate;
 
         BiFunction<int[], int[], Integer> distance;
-
-        AttackWay() {
-        }
 
         AttackWay(String des, BiPredicate<int[], int[]> aheadBiPredicate, BiFunction<int[], int[], Integer> distance) {
             this.des = des;
