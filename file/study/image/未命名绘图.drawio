@@ -1,9 +1,78 @@
-<mxfile host="app.diagrams.net" modified="2023-09-18T06:08:34.754Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="21.7.5" etag="DemYIGdCvnqeTI1bhR4P" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-18T06:18:59.505Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="JCmbnwfo8WjKnK0cFUqk" version="21.7.5" type="github">
   <diagram name="第 1 页" id="7q3kl9Qbe6miR8kftqc1">
-    <mxGraphModel>
+    <mxGraphModel dx="954" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-1" value="数仓" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="20" y="150" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-2" value="数据平台(chaos)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="240" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="10" y="30" width="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-4" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="10" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-5" value="数据筛选" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="140" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-6" value="数据标注" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="10" y="90" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-7" value="公共数据集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="140" y="90" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-8" value="数据质量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="10" y="140" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-9" value="血缘依赖" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-2">
+          <mxGeometry x="140" y="140" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-10" value="建模平台(turing)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="50" width="380" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="10" y="30" width="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-13" value="数据筛选" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="150" y="70" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-14" value="数据标注" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="20" y="120" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-15" value="公共数据集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="150" y="120" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-19" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="280" y="70" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-20" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="280" y="120" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-21" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="20" y="70" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-23" value="平台职能" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="150" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-26" value="训练方式" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="160" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-28" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="20" y="200" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-40" value="数据采集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry x="150" y="200" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZuJ5k9Y-reImp3E-zo0F-24" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=1;" edge="1" parent="1" source="ZuJ5k9Y-reImp3E-zo0F-10" target="ZuJ5k9Y-reImp3E-zo0F-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="260" as="sourcePoint" />
+            <mxPoint x="690" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
