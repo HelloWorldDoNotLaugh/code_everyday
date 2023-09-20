@@ -54,7 +54,7 @@ public class AutoGlobalizationUtil {
     private static void logShouldGlobalFile(File file) {
         String fileName = file.getName();
 
-        if (!fileName.endsWith(".java")) {
+        if (classIsNotGlobal(fileName)) {
             return;
         }
 
@@ -79,6 +79,21 @@ public class AutoGlobalizationUtil {
                 SHOULD_GLOBAL_FILE_LIST.add(tempInfoList);
             }
         }
+    }
+
+    private static boolean classIsNotGlobal(String fileName) {
+        if (!fileName.endsWith(".java")) {
+            return true;
+        }
+
+        for (String s : GlobalizeHandler.getGlobalizeConfig().getClassNotGlobalList()) {
+            if (fileName.contains(s)) {
+                return true;
+            }
+        }
+
+        return false;
+
     }
 
     private static boolean isNotCode(String line) {

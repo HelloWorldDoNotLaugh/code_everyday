@@ -5,6 +5,17 @@ should_global_factor_list:
   - ApiResult
   - LogUtil
 
+class_not_global_list:
+  - FieldLanguage
+  - ApiCode
+  - IpLoginField
+  - ExternalCustomerField
+  - ApplicationConfigCacheService
+  - CompanyCustomerField
+  - PersonCustomerField
+  - Sm4Util
+  - Test
+  - Swagger
 
 project_path: /Users/td/code/project/yuntu-aml
 messages_path: /Users/helloworld/code/pro/messages.properties

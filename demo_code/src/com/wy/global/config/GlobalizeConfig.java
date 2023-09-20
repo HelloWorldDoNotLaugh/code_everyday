@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class GlobalizeConfig {
 
+    private List<String> classNotGlobalList;
     private List<String> shouldGlobalFactorList;
 
     private String projectPath;
@@ -90,5 +91,13 @@ public class GlobalizeConfig {
 
     public void setInfoLogPath(String infoLogPath) {
         this.infoLogPath = infoLogPath;
+    }
+
+    public List<String> getClassNotGlobalList() {
+        return classNotGlobalList;
+    }
+
+    public void setClassNotGlobalList(ArrayList<String> classNotGlobalList) {
+        this.classNotGlobalList = classNotGlobalList;
     }
 }
