@@ -1,6 +1,9 @@
 package com.wy.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author yuyang.zhang
@@ -9,16 +12,20 @@ import java.util.ArrayList;
  */
 public class DataUtil {
     public static int[][] getDouArray(String data) {
-        ArrayList<int[]> list = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
         for (String s : data.split("],")) {
-            String[] strings = s.replace("[", "").replace("]", "").split(",");
-            int[] ints = {Integer.parseInt(strings[0]), Integer.parseInt(strings[1])};
-            list.add(ints);
+            List<Integer> integers = Arrays.stream(s.replace("[", "").replace("]", "").split(","))
+                    .map(Integer::parseInt)
+                    .collect(Collectors.toList());
+
+            list.add(integers);
         }
 
-        int[][] result = new int[list.size()][2];
+        int[][] result = new int[list.size()][list.get(0).size()];
         for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
+            for (int j = 0; j < list.get(0).size(); j++) {
+                result[i][j] = list.get(i).get(j);
+            }
         }
 
         return result;
