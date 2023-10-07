@@ -22,6 +22,6 @@ public class CatServiceImpl implements AnimalService {
 
     @Override
     public String  sleep() {
-        return  ("can can sleep");
+        return  ("cat can sleep");
     }
 }
