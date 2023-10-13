@@ -1,4 +1,4 @@
-package com.wy.skill;
+package com.wy.spring_demo.skill;
 
 import cn.hutool.core.map.MapUtil;
 import lombok.Data;

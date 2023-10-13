@@ -1,6 +1,7 @@
 package com.wy.connection;
 
 import cn.hutool.core.collection.CollUtil;
+import com.google.common.collect.Sets;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -25,13 +26,14 @@ public class CollectionUtil {
 
 
     public static void main(String[] args) {
-        Set<Integer> collect = new HashSet<>();
-        Set<Set<Integer>> split = split(collect);
+        Set<Set<Integer>> split = split(Sets.newHashSet(1, 2, 3, 4, 5, 6, 7, 8));
         for (Set<Integer> integers : split) {
-            System.out.println(1);
+            for (Integer integer : integers) {
+                System.out.print(integer);
+                System.out.print(" ");
+            }
+
+            System.out.println();
         }
-        System.out.println();
-
-
     }
 }
