@@ -7,9 +7,9 @@
 
 ###需要修改配置 start###########################################
 # 需要打通ssh的用户名
-USER=tdops
+USER=tongdun
 # 需要打通ssh的host name
-HOSTS=master50,master51,slave52
+HOSTS=mingmo-1,mingmo-2,mingmo-3
 ###需要修改配置 end############################################
 
 

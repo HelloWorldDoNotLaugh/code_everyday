@@ -1,0 +1,1 @@
+ssh tongdun@mingmo-2
