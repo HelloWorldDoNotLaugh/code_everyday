@@ -1,0 +1,6 @@
+POST http://localhost:8002/api/routes/mingmo
+
+
+{"target": "https://modelwise.tcloud.tongdun.cn/user/login"}
+
+
