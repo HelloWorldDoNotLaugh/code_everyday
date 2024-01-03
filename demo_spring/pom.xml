@@ -70,17 +70,6 @@
             <version>1.2.83</version>
         </dependency>
 
-        <dependency>
-            <groupId>cn.fraudmetrix</groupId>
-            <artifactId>module-elasticsearchV6-enterprise</artifactId>
-            <version>6.3.5-atreus-es7</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.elasticsearch</groupId>
-                    <artifactId>elasticsearch</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>org.elasticsearch</groupId>

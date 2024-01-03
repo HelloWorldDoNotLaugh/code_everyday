@@ -1,9 +1,6 @@
 package com.wy.leetcode;
 
-import sun.security.util.ArrayUtil;
 
-import java.util.*;
-import java.util.stream.IntStream;
 
 /**
  * @author HelloWorld
