@@ -151,3 +151,7 @@ val kvRDD: RDD[(String, Int)] = cleanWordRDD.map(word => (word, 1))
 
 **mapPartitions算子用法**： 以数据分区为粒度，使用映射函数f对RDD进行函数数据转换
 
+
+
+
+

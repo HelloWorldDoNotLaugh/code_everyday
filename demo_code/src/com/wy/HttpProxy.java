@@ -1,9 +1,8 @@
 package com.wy;
 
 import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 
-import java.util.HashMap;
 
 /**
  * @author yuyang.zhang
@@ -12,9 +11,11 @@ import java.util.HashMap;
  */
 public class HttpProxy {
     public static void main(String[] args) {
-        String url = "http://localhost:8002/api/routes/mingmo";
-        String json = "{\"target\": \"https://modelwise.tcloud.tongdun.cn/user/login\"}";
+        String url = "http://10.57.17.244:8044/api/routes/ok";
+        String json = "{\"target\": \"http://10.57.17.\"}";
 
         HttpRequest.post(url).body(json).header("Content-Type", "application/json").execute();
     }
+
+
 }
