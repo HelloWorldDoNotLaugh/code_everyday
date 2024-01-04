@@ -14,12 +14,15 @@ import java.util.Queue;
  */
 public class BinaryTree<E> {
     public static void main(String[] args) {
-        System.out.println(getHeight(15));
+        String blankSpace = getBlankSpace(1);
+        System.out.println(blankSpace + 1);
+        BinaryTree<Integer> binaryTree = init(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+        print(binaryTree);
     }
     Node<E> root;
 
     /**
-     * @description 初始化二叉树(层次便利)
+     * @description 初始化二叉树(层次遍历)
      * @author HelloWorld
      * @create 2024/1/2 18:57
      * @param elements
@@ -54,12 +57,30 @@ public class BinaryTree<E> {
 
 
     public static<E> void print(BinaryTree<E> tree) {
-        List<Node<E>> nodeList = levelOrderTraversal(tree);
-        int height = getHeight(nodeList.size());
-        int maxNodeLevels = (int) Math.pow(2, height - 1);
+        List<List<Node<E>>> levelNodeList = levelOrderTraversal(tree);
+        int height = levelNodeList.size();
+        for (int level = 1; level <= height; level++) {
+            List<Node<E>> nodelist = levelNodeList.get(level - 1);
+            // 打印首个节点
+            int firstNodePosition = (int) Math.pow(2, (height - level)) - 1;
+            System.out.print(getBlankSpace(firstNodePosition) + nodelist.get(0).element);
+            int separation = (int)Math.pow(2, (height-level+1));
+            for (int i = 1; i < nodelist.size(); i++) {
+                // 打印中间节点
+                System.out.print(getBlankSpace(separation) + nodelist.get(i).element);
+            }
+            System.out.println();
+        }
+    }
 
-        // 打印每层节点
+    private static String getBlankSpace(int n) {
+        StringBuilder builder = new StringBuilder();
+        while (n > 0) {
+            builder.append("\t");
+            n--;
+        }
 
+        return builder.toString();
     }
 
 
@@ -75,27 +96,35 @@ public class BinaryTree<E> {
         while (!(Math.pow(2, level - 1) <= nodeNums && Math.pow(2, level) > nodeNums)) {
             level++;
         }
+
         return level;
     }
 
-    public static<E>List<Node<E>> levelOrderTraversal(BinaryTree<E> tree) {
-        List<Node<E>> nodes = new ArrayList<>();
+    public static<E>List<List<Node<E>>> levelOrderTraversal(BinaryTree<E> tree) {
         Queue<Node<E>> queue = new LinkedList<>();
         queue.offer(tree.root);
-
+        List<List<Node<E>>> result = new ArrayList<>();
         while (!queue.isEmpty()) {
-            Node<E> node = queue.poll();
-            nodes.add(node);
+            // 此时队列的容量就是当前层的节点个数
+            int levelSize = queue.size();
+            ArrayList<Node<E>> levelNodes = new ArrayList<>();
+            for (int i = 0; i < levelSize; i++) {
+                Node<E> node = queue.poll();
+                levelNodes.add(node);
 
-            if (node.left!= null) {
-                queue.offer(node.left);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+
+                if (node.right!= null) {
+                    queue.offer(node.right);
+                }
             }
-            if (node.right!= null) {
-                queue.offer(node.right);
-            }
+
+            result.add(levelNodes);
         }
 
-        return nodes;
+        return result;
     }
 
     static class Node<E> {
