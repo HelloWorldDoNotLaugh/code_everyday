@@ -7,7 +7,7 @@ import cn.hutool.core.lang.Assert;
  * @date 2024/1/2 16:22
  * @email helloworld.dng@gmail.com
  */
-public class InitLinkedList<E> {
+public class InitLinkedList {
     public static void main(String[] args) {
         Node<Integer> head = initAtHead(1, 2, 3, 4, 5);
 

@@ -162,11 +162,139 @@ public class TreeNode {
         }
     }
 
+    public static void preTraversal(TreeNode root) {
+        if (null == root) {
+            return;
+        }
+
+        printValue(root);
+        preTraversal(root.left);
+        preTraversal(root.right);
+    }
+
+    public static void preTraversalByStack(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            printValue(node);
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+    }
+
+    public static void inorderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(root.left);
+        printValue(root);
+        inorderTraversal(root.right);
+    }
+    public static void inorderTraversalByStack(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+
+            node = stack.pop();
+            printValue(node);
+            node = node.right;
+        }
+    }
+
+    public static void postTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        postTraversal(root.left);
+        postTraversal(root.right);
+        printValue(root);
+    }
+
+    public static void postTraversalByStack(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        TreeNode pre = null;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+
+            // 到这，可以判定已经到了最左边的子节点，但是不能保证该节点是否具有右孩子节点
+            node = stack.pop();
+            // 如果 pre == node.right 说明右孩子已经被访问了
+            if (node.right == null || pre == node.right) {
+                pre = node;
+                printValue(node);
+                node = null;
+            } else {
+                stack.push(node);
+                node = node.right;
+            }
+        }
+    }
+
+    private static void printValue(TreeNode node) {
+        if (null == node) {
+            return;
+        }
+
+        System.out.print(node.val + "\t");
+    }
+
+    public static void levelTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            printValue(node);
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+        }
+    }
+
+    public static int getLength(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftHeight = getLength(root.left);
+        int rightHeight = getLength(root.right);
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+
     public static void main(String[] args) {
         TreeNode node = init(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        List<Integer> integers = levelOrderTraversal(node);
-        for (Integer integer : integers) {
-            System.out.println(integer);
-        }
+
+        System.out.println(getLength(node));
     }
 }

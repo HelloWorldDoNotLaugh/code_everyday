@@ -7,4 +7,8 @@ public class L765 {
 
         return 0;
     }
+
+    class UnionFindCollection {
+
+    }
 }

@@ -1,6 +1,8 @@
 package com.wy.huaiwei;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * @author HelloWorld

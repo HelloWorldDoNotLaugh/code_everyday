@@ -1,0 +1,1523 @@
+{
+  "took" : 63,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 8,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170710139300000100057ZMOCXGMEKM5JFS",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "2",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "Charlie Brown",
+            "S_S_PHONENO" : "13772909810",
+            "S_S_ACCTNO" : "ACCT004",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170710139300000100057ZMOCXGMEKM5JFS\"}",
+            "C_F_ACCVALSCORE" : 46.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170710139300000100057ZMOCXGMEKM5JFS",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST004",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "3",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051048",
+            "S_D_BIZTIME" : "2024-02-05 10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID012345678",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170710139300000100057ZMOCXGMEKM5JFS\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "2",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST004",
+            "S_S_CUSTNAME" : "Charlie Brown",
+            "S_S_PHONENO" : "13772909810",
+            "S_S_ACCTNO" : "ACCT004",
+            "S_S_SERIALNUM" : "3",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051048",
+            "C_F_ACCVALSCORE" : 46,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-05T10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID012345678",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570847
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051048",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "2"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "Charlie Brown"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13772909810"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCT004"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170710139300000100057ZMOCXGMEKM5JFS"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUST004"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051048"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1707101393000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID012345678"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1707062400000,
+          "finalScore" : 0.0,
+          "cost" : 20,
+          "tokenId" : "170710139300000100057ZMOCXGMEKM5JFS",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1707101393000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570847,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170710139300000100057MSKGASVR5AJZRD",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "2",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "Edward Davis",
+            "S_S_PHONENO" : "13772909870",
+            "S_S_ACCTNO" : "ACCT006",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170710139300000100057MSKGASVR5AJZRD\"}",
+            "C_F_ACCVALSCORE" : 50.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170710139300000100057MSKGASVR5AJZRD",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST006",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "1",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051047",
+            "S_D_BIZTIME" : "2024-02-05 10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID234567890",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170710139300000100057MSKGASVR5AJZRD\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "2",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST006",
+            "S_S_CUSTNAME" : "Edward Davis",
+            "S_S_PHONENO" : "13772909870",
+            "S_S_ACCTNO" : "ACCT006",
+            "S_S_SERIALNUM" : "1",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051047",
+            "C_F_ACCVALSCORE" : 50.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-05T10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID234567890",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570848
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051047",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "2"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "Edward Davis"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13772909870"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCT006"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170710139300000100057MSKGASVR5AJZRD"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUST006"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051047"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1707101393000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID234567890"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1707062400000,
+          "finalScore" : 0.0,
+          "cost" : 20,
+          "tokenId" : "170710139300000100057MSKGASVR5AJZRD",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1707101393000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570848,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170710139300000100057KV8QFSWWOWTPDL",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "suspicious",
+            "S_S_CUSTNAME" : "Alice Johnson16",
+            "S_S_PHONENO" : "13772909820",
+            "S_S_ACCTNO" : "ACCT016",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170710139300000100057KV8QFSWWOWTPDL\"}",
+            "C_F_ACCVALSCORE" : 40.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170710139300000100057KV8QFSWWOWTPDL",
+            "S_E_TRANSSTAT" : "0",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST016",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "suspicious",
+            "S_S_SERIALNUM" : "2",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051049",
+            "S_D_BIZTIME" : "2024-02-05 10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID45678901216",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170710139300000100057KV8QFSWWOWTPDL\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST016",
+            "S_S_CUSTNAME" : "Alice Johnson16",
+            "S_S_PHONENO" : "13772909820",
+            "S_S_ACCTNO" : "ACCT016",
+            "S_S_SERIALNUM" : "2",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051049",
+            "C_F_ACCVALSCORE" : 40.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-05T10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID45678901216",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "0",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "suspicious",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "d46487867edf47eb83734cd2ec28013f",
+                  "decisionCode" : "suspicious",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "6b490f4848e14a188dbab667046ae31c"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "suspicious",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570848
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051049",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "Alice Johnson16"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13772909820"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCT016"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170710139300000100057KV8QFSWWOWTPDL"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "0"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUST016"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051049"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1707101393000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID45678901216"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1707062400000,
+          "finalScore" : 0.0,
+          "cost" : 20,
+          "tokenId" : "170710139300000100057KV8QFSWWOWTPDL",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1707101393000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "可疑账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570848,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170710139300000100057LNP0FDYIU9GDY9",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "迪丽热巴18",
+            "S_S_PHONENO" : "13772909822",
+            "S_S_ACCTNO" : "ACCT018",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170710139300000100057LNP0FDYIU9GDY9\"}",
+            "C_F_ACCVALSCORE" : 57.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170710139300000100057LNP0FDYIU9GDY9",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST018",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "4",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051050",
+            "S_D_BIZTIME" : "2024-02-05 10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID4567890121618",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170710139300000100057LNP0FDYIU9GDY9\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST018",
+            "S_S_CUSTNAME" : "迪丽热巴18",
+            "S_S_PHONENO" : "13772909822",
+            "S_S_ACCTNO" : "ACCT018",
+            "S_S_SERIALNUM" : "4",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051050",
+            "C_F_ACCVALSCORE" : 57,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-05T10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID4567890121618",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570857
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051050",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "迪丽热巴18"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13772909822"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCT018"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170710139300000100057LNP0FDYIU9GDY9"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUST018"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051050"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1707101393000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID4567890121618"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1707062400000,
+          "finalScore" : 0.0,
+          "cost" : 19,
+          "tokenId" : "170710139300000100057LNP0FDYIU9GDY9",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1707101393000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570857,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "1707101393000001000574OK8DLFMTOP29J",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "Alice Johnson15",
+            "S_S_PHONENO" : "13772909243",
+            "S_S_ACCTNO" : "ACCT015",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"1707101393000001000574OK8DLFMTOP29J\"}",
+            "C_F_ACCVALSCORE" : 78.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "1707101393000001000574OK8DLFMTOP29J",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST015",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "5",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051051",
+            "S_D_BIZTIME" : "2024-02-05 10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID4567890121618",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"1707101393000001000574OK8DLFMTOP29J\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUST015",
+            "S_S_CUSTNAME" : "Alice Johnson15",
+            "S_S_PHONENO" : "13772909243",
+            "S_S_ACCTNO" : "ACCT015",
+            "S_S_SERIALNUM" : "5",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051051",
+            "C_F_ACCVALSCORE" : 78,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-05T10:49:53",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID4567890121618",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570857
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051051",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "Alice Johnson15"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13772909243"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCT015"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "1707101393000001000574OK8DLFMTOP29J"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUST015"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051051"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1707101393000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID4567890121618"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1707062400000,
+          "finalScore" : 0.0,
+          "cost" : 19,
+          "tokenId" : "1707101393000001000574OK8DLFMTOP29J",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1707101393000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570857,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170830984400000100057K8WM8GOEKK4JQ1",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS01",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170830984400000100057K8WM8GOEKK4JQ1\"}",
+            "C_F_ACCVALSCORE" : 78.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170830984400000100057K8WM8GOEKK4JQ1",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS01",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "6",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051052",
+            "S_D_BIZTIME" : "2024-02-19 10:30:44",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ID13666044323",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170830984400000100057K8WM8GOEKK4JQ1\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS01",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS01",
+            "S_S_SERIALNUM" : "6",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_02051052",
+            "C_F_ACCVALSCORE" : 78,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-19T10:30:44",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ID13666044323",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570860
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_02051052",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "mercurial"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13666044323"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCTZJS01"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170830984400000100057K8WM8GOEKK4JQ1"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUSTZJS01"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_02051052"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1708309844000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ID13666044323"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1708272000000,
+          "finalScore" : 0.0,
+          "cost" : 19,
+          "tokenId" : "170830984400000100057K8WM8GOEKK4JQ1",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1708309844000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570859,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170833034000000100057TWSOGSC0XX9UDZ",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS04",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170833034000000100057TWSOGSC0XX9UDZ\"}",
+            "C_F_ACCVALSCORE" : 78.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170833034000000100057TWSOGSC0XX9UDZ",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS04",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "8",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_zjs04",
+            "S_D_BIZTIME" : "2024-02-19 16:12:20",
+            "C_S_ISNEWACCOUNT" : "1",
+            "S_S_CERTID" : "ZJS04",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170833034000000100057TWSOGSC0XX9UDZ\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS04",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS04",
+            "S_S_SERIALNUM" : "8",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_zjs04",
+            "C_F_ACCVALSCORE" : 78,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-19T16:12:20",
+            "C_S_ISNEWACCOUNT" : "1",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ZJS04",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570888
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_zjs04",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "mercurial"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13666044323"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCTZJS04"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170833034000000100057TWSOGSC0XX9UDZ"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUSTZJS04"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_zjs04"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1708330340000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ZJS04"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1708272000000,
+          "finalScore" : 0.0,
+          "cost" : 11,
+          "tokenId" : "170833034000000100057TWSOGSC0XX9UDZ",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1708330340000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570888,
+          "status" : 1
+        }
+      },
+      {
+        "_index" : "tiance-batch_decision_invokerecord_1c2d9fac25634eaa8c3c37591bd8d24b",
+        "_type" : "_doc",
+        "_id" : "170831432400000100057NCFBE61CWSHPBC",
+        "_score" : 1.0,
+        "_source" : {
+          "contextFields" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_ISHOLIDAY" : 0,
+            "S_S_FINALDEALTYPE" : "concerned",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS02",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_E_APIMODEL" : "30",
+            "S_N_BATCHTIMES" : 1,
+            "geo" : "{\"tokenId\":\"170831432400000100057NCFBE61CWSHPBC\"}",
+            "C_F_ACCVALSCORE" : 78.0,
+            "S_S_TASKACCT" : "20240219",
+            "S_E_RUNTYPE" : "1",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_S_TOKENID" : "170831432400000100057NCFBE61CWSHPBC",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS02",
+            "S_S_RISKSCORE" : 0.0,
+            "acct_test20240130_finalDealType" : "concerned",
+            "S_S_SERIALNUM" : "7",
+            "ipReputation" : "{}",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_zjs02",
+            "S_D_BIZTIME" : "2024-02-19 11:45:24",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_S_CERTID" : "ZJS02",
+            "acct_test20240130_finalScore" : 0.0,
+            "browserInfo" : "{\"tokenId\":\"170831432400000100057NCFBE61CWSHPBC\"}",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "policyVersion" : 1,
+          "reasonMessage" : "运行成功",
+          "requestParams" : {
+            "S_E_CUSTTYPE" : "1",
+            "S_S_BATCHTRANSNO" : "1c2d9fac25634eaa8c3c37591bd8d24b",
+            "S_S_CUSTNO" : "CUSTZJS02",
+            "S_S_CUSTNAME" : "mercurial",
+            "S_S_PHONENO" : "13666044323",
+            "S_S_ACCTNO" : "ACCTZJS02",
+            "S_S_SERIALNUM" : "7",
+            "C_S_ISUPDACCOUNTINFO" : "1",
+            "S_S_PRODUCTCODE" : "Td",
+            "S_E_APIMODEL" : 30,
+            "S_N_BATCHTIMES" : "1",
+            "S_S_APPCODE" : "test_app",
+            "S_S_ORGCODE" : "TongDun",
+            "S_S_BIZID" : "acct_zjs02",
+            "C_F_ACCVALSCORE" : 78,
+            "S_S_TASKACCT" : "20240219",
+            "S_D_BIZTIME" : "2024-02-19T11:45:24",
+            "C_S_ISNEWACCOUNT" : "0",
+            "S_E_RUNTYPE" : "1",
+            "S_S_CERTID" : "ZJS02",
+            "C_S_BATCHDETAILNO" : "zjs040229198_20240219_NORMAL_1_8",
+            "S_S_POLICYCODE" : "acct_20240130",
+            "S_E_TRANSSTAT" : "1",
+            "S_S_CUSTMANAGER" : "账户测试"
+          },
+          "ruleSetResult" : [
+            {
+              "nodeId" : "0c4e4ad0bf3a11ee9e0089d2d78a3a81",
+              "decisionCode" : "concerned",
+              "ruleSetUuid" : "bd92681bb2fe404fa0f5bb7436c424e5",
+              "score" : 0.0,
+              "ruleSetCode" : "acct_test20240130",
+              "ruleSetVersion" : 1,
+              "riskType" : "AccountEmbezzle",
+              "hitRules" : [
+                {
+                  "ruleUuid" : "34482d8828c845578d329a669305bcae",
+                  "decisionCode" : "concerned",
+                  "score" : 0.0,
+                  "valid" : 1,
+                  "originRuleUuid" : "2a5bd96581f14d40a8300d3856156121"
+                }
+              ]
+            }
+          ],
+          "appCode" : "test_app",
+          "policyCode" : "acct_20240130",
+          "policyMode" : 2,
+          "finalDecisionCode" : "concerned",
+          "extensionParams" : {
+            "C_S_ROSTERLIST" : { },
+            "startTime" : 1708330570888
+          },
+          "orgCode" : "TongDun",
+          "bizModel" : 5,
+          "bizId" : "acct_zjs02",
+          "searchFields" : [
+            {
+              "name" : "S_E_CUSTTYPE",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_CUSTNAME",
+              "value" : "mercurial"
+            },
+            {
+              "name" : "S_S_PHONENO",
+              "value" : "13666044323"
+            },
+            {
+              "name" : "S_S_ACCTNO",
+              "value" : "ACCTZJS02"
+            },
+            {
+              "name" : "S_E_APIMODEL",
+              "value" : "30"
+            },
+            {
+              "name" : "S_N_BATCHTIMES",
+              "longValue" : 1
+            },
+            {
+              "name" : "S_S_TASKACCT",
+              "value" : "20240219"
+            },
+            {
+              "name" : "S_S_POLICYCODE",
+              "value" : "acct_20240130"
+            },
+            {
+              "name" : "S_S_TOKENID",
+              "value" : "170831432400000100057NCFBE61CWSHPBC"
+            },
+            {
+              "name" : "S_E_TRANSSTAT",
+              "value" : "1"
+            },
+            {
+              "name" : "S_S_BATCHTRANSNO",
+              "value" : "1c2d9fac25634eaa8c3c37591bd8d24b"
+            },
+            {
+              "name" : "S_S_CUSTNO",
+              "value" : "CUSTZJS02"
+            },
+            {
+              "name" : "S_S_PRODUCTCODE",
+              "value" : "Td"
+            },
+            {
+              "name" : "S_S_BIZID",
+              "value" : "acct_zjs02"
+            },
+            {
+              "name" : "S_D_BIZTIME",
+              "dateValue" : 1708314324000
+            },
+            {
+              "name" : "S_S_CERTID",
+              "value" : "ZJS02"
+            },
+            {
+              "name" : "S_S_CUSTMANAGER",
+              "value" : "账户测试"
+            }
+          ],
+          "reasonCode" : 200,
+          "invokeType" : 1,
+          "statDate" : 1708272000000,
+          "finalScore" : 0.0,
+          "cost" : 12,
+          "tokenId" : "170831432400000100057NCFBE61CWSHPBC",
+          "batchNum" : "zjs040229198_20240219_NORMAL_1_8",
+          "eventType" : "Login",
+          "bizTime" : 1708314324000,
+          "outputFields" : { },
+          "policyUuid" : "a1ec2662d5274fcb856a160b550a76ae",
+          "finalDecisionName" : "关注账户",
+          "productCode" : "Td",
+          "businessType" : 2,
+          "callTime" : 1708330570888,
+          "status" : 1
+        }
+      }
+    ]
+  }
+}

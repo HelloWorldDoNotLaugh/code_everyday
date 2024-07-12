@@ -63,6 +63,18 @@
             <version>32.1.2-jre</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.13.5</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 
